@@ -1,0 +1,10 @@
+JSON (JavaScript Object Notation) is a method for flatteninig data structures into strings 
+that can be easily transferred and used to reconstruct or replicate the original data structure.
+
+Even though JSON is derived from JavaScript, JSON data formatting can be used in a lot of 
+other programming languages as well. 
+
+JSON reminds me of IKEA furniture. For instance, an IKEA table that is fully assembled is like 
+a data structure, and for transport the table can be taken apart and packed flat- table top, legs,
+screws. Then it can be reassembled from that flat pack later. 
+
