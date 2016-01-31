@@ -8,3 +8,4 @@ JSON reminds me of IKEA furniture. For instance, an IKEA table that is fully ass
 a data structure, and for transport the table can be taken apart and packed flat- table top, legs,
 screws. Then it can be reassembled from that flat pack later. 
 
+For my personal portfolio I am using JSON to serialize my resume data. 
