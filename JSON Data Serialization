@@ -20,7 +20,7 @@ going to use JSON to serialize:
     "phone": "310.531.4560",
     "intro": "Self-propelled learner pursueing a career developing techinical solutions to human problems.",
     "location": {
-      "city": "Meridian, ",
+      "city": "Meridian",
       "state": "ID"
     },
     "profiles": [
@@ -28,7 +28,7 @@ going to use JSON to serialize:
         "network": "LinkedIn",
         "username": "zekegeek",
         "url": "https://www.linkedin.com/in/zekegeek"
-      },
+      }
     ]
   },
   "experience": [
@@ -37,7 +37,7 @@ going to use JSON to serialize:
       "position": "User Experience Developer Intern",
       "startDate": "06/15",
       "endDate": "present",
-      "summary": "Leads usability strategy and UX development for a web-based application managing data associated with bioenergy feedstocks. Recommends and implements changes to site design, layout, content, functionality, and information architecture. Conducts user testing.",
+      "summary": "Leads usability strategy and UX development for a web-based application managing data associated with bioenergy feedstocks. Recommends and implements changes to site design, layout, content, functionality, and information architecture. Conducts user testing."
     }
   ],
   "extracurricular": [
@@ -46,10 +46,7 @@ going to use JSON to serialize:
       "position": "Team Lead",
       "startDate": "11/2014",
       "endDate": "11/2015",
-      "summary": "Led team to 2nd place--twice--in regional cyber defense competition. Organized team, led team prep sessions, developed and implemented security strategy, coordinated team collaboration while defending a network from hackers and carrying out business tasks.",
-      "highlights": [
-        "Awarded 'Teacher of the Month'"
-      ]
+      "summary": "Led team to 2nd place--twice--in regional cyber defense competition. Organized team, led team prep sessions, developed and implemented security strategy, coordinated team collaboration while defending a network from hackers and carrying out business tasks."
     }
   ],
   "education": [
@@ -83,7 +80,8 @@ going to use JSON to serialize:
         "CSS3",
         "JavaScript",
         "Java",
-        "C#",
+        ".NET",
+        "ASP.NET",
         "Visual Studio",
         "Chrome Developer Tools",
         "Github",
@@ -91,15 +89,17 @@ going to use JSON to serialize:
         "Web design",
         "Cyber security"
       ]
-    },
-    
+    }
   ],
   "languages": [
     {
       "language": "English",
       "fluency": "Native speaker"
+    },
+    {
       "language": "Swedish",
       "fluency": "Proficient"
     }
-  ],
+  ]
+}
   
