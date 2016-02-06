@@ -12,6 +12,3 @@ screws. Then it can be reassembled from that flat pack later.
 For my personal portfolio I am using JSON to serialize my resume data. I wrote a simple console app 
 that pulls a few things from my JSON-formatted resume. 
 
-The files for this app can be found here: 
-
-(master/src/App/Console)
