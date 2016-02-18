@@ -8,9 +8,50 @@ pursue by interacting with the system. Solid lines show association between acto
 dependencies between use cases. For example, I sketched a Use Case Diagram depicting some of the use cases for iLearn. One is submitting
 assignments, and another is grading assignments. Students submit assignments and instructors grade them. The instructor has nothing to 
 grade until a student has submitted an assignment, so an arrow between those two use cases indicates that the Grade Assignments use
-case has a dependency on the Submit Assignments use case. 
+case has a dependency on the Submit Assignment use case. 
+
+Sometimes the boundaries of the system are indicated by drawing a box around the use cases. Anything inside the box is internal to the 
+system, and anything outside the box is external to the system. 
 
 Use Case Diagrams can be used to identify system requirements and sketch different ways of structuring a system. It is a high level 
 planning tool that can be expanded upon with more detailed planning documents. 
 
+To identify Use Cases, reflect on what users hope to accomplish by interacting with a system, the steps they will need to take to acco
+accomplish those goals, what tasks they use the system to carry out, and the flow of information during their interactions with the 
+system. 
+
+
+
 Use Case Document
+
+While Use Case Diagrams are a good starting point and may be of interest to management or stakeholders, the development team will find
+more value in a Use Case Document. 
+
+The basic difference between these two is that Use Case Diagrams are visual and serve as a sort of basic outline, while Use Case Documents
+delve into more detail. 
+
+A Use Case Document breaks down each use case further into more detailed interaction steps between actor and system. 
+
+For example, for the use case "Submit Assignment", a Use Case document might have this list of interaction steps: 
+
+-Student signs in to iLearn 
+-System verifies sign-in credentials
+-Student selects a course
+-Student selects an assignment 
+-System checks that assignment page is available for student to view (not locked until a later date, for instance)
+-Student opens dialogue box to submit assignment 
+-System checks that student is authorized to submit assignment (for instance, that due date has not passed)
+-Student attaches assignment
+-System verifies that attachment succeeded 
+-Student enters comment about assignment (optional)
+-Student submits assignment 
+-System verifies assignment submission
+
+
+References: 
+
+http://www.agilemodeling.com/artifacts/useCaseDiagram.htm
+
+http://agilemodeling.com/artifacts/systemUseCase.htm#Identifying
+
+http://agilemodeling.com/artifacts/systemUseCase.htm
