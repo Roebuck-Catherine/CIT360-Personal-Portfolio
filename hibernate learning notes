@@ -1,0 +1,8 @@
+Hibernate helps streamline the transfer of data between app and database. 
+
+Hibernate is a very large open source Java library. 
+
+Application model classes declared as Hibernate represent database tables. Hibernate class attributes 
+match the count and types of the database fields represented. 
+
+When a value in a hibernate class is changed, that change is stored in the database. 
