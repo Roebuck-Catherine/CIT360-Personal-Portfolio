@@ -1,0 +1,16 @@
+Use Case Diagram 
+
+Use Case Diagrams are visual representations of actors interacting with a system. Actors can be people such as users, or they can be 
+other applications or systems that have a goal they pursue by interacting with the featured system. 
+
+In Use Case Diagrams, actors are represented as stick figures. Labeled ovals represent use cases (tasks or goals) that actors 
+pursue by interacting with the system. Solid lines show association between actors and use cases, sometimes with arrows to indicate 
+dependencies between use cases. For example, I sketched a Use Case Diagram depicting some of the use cases for iLearn. One is submitting
+assignments, and another is grading assignments. Students submit assignments and instructors grade them. The instructor has nothing to 
+grade until a student has submitted an assignment, so an arrow between those two use cases indicates that the Grade Assignments use
+case has a dependency on the Submit Assignments use case. 
+
+Use Case Diagrams can be used to identify system requirements and sketch different ways of structuring a system. It is a high level 
+planning tool that can be expanded upon with more detailed planning documents. 
+
+Use Case Document
