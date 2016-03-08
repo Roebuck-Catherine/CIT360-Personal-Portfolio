@@ -1,0 +1,23 @@
+JUnit is a code testing framework. It runs in most IDE's, is built into Eclipse, and can also be used through the command-line. 
+
+JUnit provides automated testing so that you don't have to spend extra time setting up every test case and condition. 
+
+JUnit tests assertions which can include: 
+
+assertEquals
+-asserting that two values are equal
+
+assertTrue / assertFalse
+-asserting that two values are true or that they are false
+
+assertNull / assertNotNull
+-asserting that an object is null or not null 
+
+assertSame / assertNotSame
+-asserting that two objects refer to the same object or to different objects
+
+Timeout Test Example
+//put an @Test above each test case
+
+@Test (timeout = 5000)
+
