@@ -16,8 +16,28 @@ assertNull / assertNotNull
 assertSame / assertNotSame
 -asserting that two objects refer to the same object or to different objects
 
+The use of JUnit that interests me most is the timeout test, which can be used to stop an infinite loop or a process that
+is taking much longer than expected. 
+
 Timeout Test Example
 //put an @Test above each test case
+// by default the timeout is in milliseconds, so 5000 is just 5 seconds
 
-@Test (timeout = 5000)
+package App.Console;
+import org.junit.Test;
+import org.junit.rules.Timeout;
+
+public class pointlessLoop {
+
+	@Test (timeout = 5000)	
+	public void runPointlessLoop () {
+		int i = 6;
+		while (i > 5) {
+			System.out.println(i++);
+		}
+	}
+}
+
+Since i is always greater than 5, the condition is always true and the loop continues until the timeout stops it at 5 seconds. 
+I ran this in eclipse and it failed at 5.033 seconds. 
 
