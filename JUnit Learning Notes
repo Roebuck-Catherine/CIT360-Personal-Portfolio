@@ -7,6 +7,19 @@ JUnit tests assertions which can include:
 assertEquals
 -asserting that two values are equal
 
+Here is what this would look like. 
+
+public class addingTest {
+
+	@Test
+	public void additionTest () {
+		int result = test.add(5, 3);
+		assertEquals(8, result);		
+	}
+}
+
+This test would take the integers specified, add them together, and see if the result was as expected.
+
 assertTrue / assertFalse
 -asserting that two values are true or that they are false
 
