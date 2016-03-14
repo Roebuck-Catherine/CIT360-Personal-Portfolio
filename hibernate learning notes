@@ -7,5 +7,56 @@ match the count and types of the database fields represented.
 
 When a value in a hibernate class is changed, that change is stored in the database. 
 
-When Java classes are designed to be persisted using Hibernate, the classes need get and set methos compliant with Javabeans. 
+When Java classes are designed to be persisted using Hibernate, the classes need get and set methods compliant with Javabeans. 
 The class also needs an attribute that can be an index. 
+
+So here's a java class designed to for Hibernate, with get and set methods and an index/id: 
+
+public class applicant {
+	private int id;
+	private String name; 
+	private String major;
+	private String institution;
+	
+	public pplicant() {}
+	public applicant(String applicantname, String applicantmajor, String applicantinstitution) {
+		this.name = applicantname;
+		this.major = applicantmajor;
+		this.institution = applicantinstitution;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setID( int id )
+	{
+		this.id = id;
+	}
+	
+	public String getname() {
+		return name;
+	}
+	
+	public void setName(String applicant_name) {
+		this.name = applicant_name;
+	}
+	
+	public String getmajor() {
+		return major;
+	}
+	
+	public void setmajor(String applicant_major) {
+		this.major = applicant_major;
+	}
+	public String getinstitution() {
+		return institution;
+	}
+	
+	public void setinstitution(String applicant_institution) {
+		this.institution = applicant_institution;
+	}
+	}
+	
+	To add a new applicant to a database using hibernate, I would use code like this: 
+	
