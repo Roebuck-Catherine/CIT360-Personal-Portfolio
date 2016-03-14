@@ -6,3 +6,6 @@ Application model classes declared as Hibernate represent database tables. Hiber
 match the count and types of the database fields represented. 
 
 When a value in a hibernate class is changed, that change is stored in the database. 
+
+When Java classes are designed to be persisted using Hibernate, the classes need get and set methos compliant with Javabeans. 
+The class also needs an attribute that can be an index. 
