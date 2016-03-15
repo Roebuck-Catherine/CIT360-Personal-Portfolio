@@ -58,5 +58,9 @@ public class applicant {
 	}
 	}
 	
-	To add a new applicant to a database using hibernate, I would use code like this: 
-	
+I think I have two options from here. I can use hibernate with a database file, or I can use
+it with a JSON file. I read about the two options here: 
+
+http://blog.janjonas.net/2010-04-27/hibernate-json-usertype-persist-json-objects
+http://www.tutorialspoint.com/hibernate/hibernate_examples.htm
+
