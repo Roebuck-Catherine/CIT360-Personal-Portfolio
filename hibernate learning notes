@@ -1,4 +1,4 @@
-Hibernate helps streamline the transfer of data between app and database. 
+Hibernate helps streamline the transfer of data between app and database. It can also be used with JSON instead of with a database.
 
 Hibernate is a very large open source Java library. 
 
