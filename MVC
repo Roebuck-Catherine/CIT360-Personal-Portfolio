@@ -8,4 +8,133 @@ View contains code for an interface- perhaps html for a web page, perhaps some o
 Views change to reflect updates in the linked model.
 
 Controller contains logic for communicating between the view and the model. The controller controls the views the user sees and translates 
-the ways the user interacts with those views into commands to the mode. 
+the ways the user interacts with those views into commands to the model. 
+
+Here's my start at using MVC with Java. I'm using the java Class Observable: (https://docs.oracle.com/javase/7/docs/api/java/util/Observable.html)
+My understanding is that in this context, the model is observed, the view is an observer, and the model connects them. 
+
+I'm calling this tally because the idea it's basically a primitive counter. 
+
+MODEL
+
+public class Model  extends java.util.Observable {	
+	
+	private int tally;	
+
+	public Model(){
+  	System.out.println("Model()");
+	} 
+
+	public void setValue(int value) {
+
+		this.tally = value;
+		System.out.println("Model init: tally = " + tally);
+		setChanged();
+		notifyObservers(tally);
+	} 
+	
+	public void addOne() {
+		++tally;
+		System.out.println("Model : tally = " + tally);
+		setChanged();
+		notifyObservers(tally);
+	}
+}
+
+
+VIEW
+
+import java.awt.Button;
+import java.awt.Panel;
+import java.awt.Frame;
+import java.awt.TextField;
+import java.awt.Label;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowAdapter;	
+import java.lang.Integer;
+import java.util.Observable;		
+import java.awt.event.ActionListener;	
+
+
+class View implements java.util.Observer {
+	private TextField tallyView;
+	private Button button; 
+	
+	View() {
+		System.out.println("View()");	
+		
+		Frame frame 		= new Frame("MVC View");
+		frame.add("North", new Label("tally"));
+
+		tallyView 		= new TextField();
+		frame.add("Center", tallyView);
+
+		Panel panel 		= new Panel();
+		button	 		= new Button("Add 1");
+		panel.add(button);
+		frame.add("South", panel);		
+
+		frame.addWindowListener(new CloseListener());	
+		frame.setSize(200,100);
+		frame.setLocation(200,200);
+		frame.setVisible(true);
+
+	} 
+	
+	public void update(Observable obs, Object obj) {
+
+		tallyView.setText("" + ((Integer)obj).intValue());	
+    	}
+
+	public void setValue(int t){
+    		tallyView.setText("" + t);
+	} 
+    	
+	public void addController(ActionListener controller){
+		System.out.println("View : adding controller");
+		button.addActionListener(controller);	
+	} 
+	
+	public static class CloseListener extends WindowAdapter {
+		public void windowClosing(WindowEvent e) {
+			e.getWindow().setVisible(false);
+			System.exit(0);
+		} 
+	} 
+
+} 
+
+
+CONTROLLER
+
+
+class Controller implements java.awt.event.ActionListener {
+
+	Model model;
+	View view;
+
+	Controller() {	
+		System.out.println ("Controller()");
+	} 
+
+	public void actionPerformed(java.awt.event.ActionEvent e){
+	
+		System.out.println ("Controller: The " + e.getActionCommand() 
+			+ " button is clicked at " + new java.util.Date(e.getWhen())
+			+ " with e.paramString " + e.paramString() );
+		model.incrementValue();
+	} 
+
+	public void addModel(Model m){
+		this.model = m;
+	} 
+
+	public void addView(View v){
+		this.view = v;
+	} 
+
+	public void initModel(int x){
+		model.setValue(x);
+	} 
+
+} 
