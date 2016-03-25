@@ -1,0 +1,11 @@
+MVC is a way of organizing code. The code is organized into 3 folders: Model, View, and Controller. 
+
+There can be multiple files in each folder. Depending on the application, a Model might contain code for communicating with a database, 
+or a Model might contain some code for doing calculations. To remember what a Model in MVC does, think of it as representation or model 
+of a real world process, like updating information in a database. 
+
+View contains code for an interface- perhaps html for a web page, perhaps some other representation of data, like a graph or a chart. 
+Views change to reflect updates in the linked model.
+
+Controller contains logic for communicating between the view and the model. The controller controls the views the user sees and translates 
+the ways the user interacts with those views into commands to the mode. 
