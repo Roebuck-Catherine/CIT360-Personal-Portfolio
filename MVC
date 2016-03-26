@@ -13,7 +13,7 @@ the ways the user interacts with those views into commands to the model.
 Here's my start at using MVC with Java. I'm using the java Class Observable: (https://docs.oracle.com/javase/7/docs/api/java/util/Observable.html)
 My understanding is that in this context, the model is observed, the view is an observer, and the model connects them. 
 
-I'm calling this tally because the idea it's basically a primitive counter. 
+I'm calling this tally because it's basically a primitive counter. 
 
 MODEL
 
@@ -138,3 +138,12 @@ class Controller implements java.awt.event.ActionListener {
 	} 
 
 } 
+
+
+Resources
+
+http://www.cs.utsa.edu/~cs3443/mvc-example.html
+http://www.tutorialspoint.com/design_pattern/mvc_pattern.htm
+http://www.oracle.com/technetwork/articles/javase/index-142890.html
+http://www.austintek.com/mvc/
+https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
