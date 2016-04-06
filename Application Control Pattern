@@ -1,0 +1,8 @@
+Application Control Pattern is a little bit like MVC; it's a way of organizing an application. 
+
+Application Control Pattern centralizes control. This is great for modularity and reusability. 
+APC provides one place for handling requests with business logic and directing the flow of 
+traffic so the right view is delivered to the user. 
+
+For ACP, I would have a controller interface: 
+
