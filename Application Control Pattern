@@ -25,7 +25,51 @@ public String getFullName() {
 
 Then I will need a View where a user can input first and last names. 
 
+import java.awt.event.ActionListener;
+
+public class fullNameView extends JFrame {
+  private JLabel fnLabel = new JLabel("First Name");
+  private JTextfield firstName = new JTextField(20); 
+  private JLabel lnLabel = new JLabel("Last Name");
+  private JTextfield lastName = new JTextField(20); 
+  private JLabel combine = new JLabel("Show Full Name");
+  private JTextfield fullName = new JTextField(42); 
+  
+  nameView() {
+    JPanel namePanel = new JPanel(); 
+    
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    this.setSize(500, 500);
+    
+    namePanel.add(fnLabel);
+    namePanel.add(firstName);
+    namePanel.add(lnLabel);
+    namePanel.add(lastName);
+    namePanel.add(combine);
+    namePanel.add(fullName);
+    
+    this.add(namePanel);
+
+
+
 Then the Controller. The controller doesn't contain logic, just listeners that wait until an action is kicked off, then goes to the Model
 to carry out the logic. The controller decides which view to show to the user at any given time. The controller can catch exceptions
 and can alert the user of errors. 
 
+
+import java.awt.event.ActionEvent;
+
+public class nameController {
+
+  private fullNameView theView;
+  private fullNameModel theModel;
+
+  public nameController(fullNameView theView, fullNameModel theMdel) {
+    this.theView = theView;
+    this.theModel = theModel;
+    
+    this.theView.addNameListener(new NameListener());
+  }
+  
+  
+  That's what I have so far for ACP. 
