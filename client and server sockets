@@ -1,0 +1,43 @@
+Sockets help computers use TCP to communicate. 
+
+A client creates a socket and reaches out to connect to a server.
+Servers use the java.net.ServerSocket class to listen for clients
+trying to connect. 
+When the connection is received, the server creates a socket and 
+the client and server are then able to communicate by reading from 
+and writing to the socket. 
+
+Here is a client program connecting to a server using a socket: 
+
+import java.net.*;
+import java.io.*;
+
+public class hello
+{
+   public static void main(String [] args)
+   {
+      String server = args[0];
+      int portNumber = Integer.parseInt(args[1]);
+      try
+      {
+         System.out.println("Hello, it's me " + server);
+         Socket client = new Socket(server, port);
+		 + client.getRemoteSocketAddress());
+         OutputStream outToServer = client.getOutputStream();
+         DataOutputStream out = new DataOutputStream(outToServer);
+         out.writeUTF("Hello from the other side"
+                      + client.getLocalSocketAddress());
+         InputStream inFromServer = client.getInputStream();
+         DataInputStream in =
+                        new DataInputStream(inFromServer);
+         System.out.println("Message from server: " + in.readUTF());
+         client.close();
+      }catch(IOException e)
+      {
+         e.printStackTrace();
+      }
+   }
+}
+
+Here's a server program: 
+
