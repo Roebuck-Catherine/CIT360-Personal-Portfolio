@@ -1,0 +1,74 @@
+Java collections are groups of classes and interfaces that can be used to cut 
+down on programming work and to make code more reusable and more easily maintainable.
+
+Map collections connect pairs of keys and values. One implementation of map collections 
+is a hashmap. I used this in my json example: 
+
+package App.Console;
+
+import java.io.IOException;
+import java.nio.file.*;
+import java.util.*;
+
+
+import com.cedarsoftware.util.io.*;
+
+public class json {
+	public static void main(String[] args) 
+	throws IOException
+	{
+		String resumeJson = getJson(args[0]);
+		String resumeDescription = getResumeDescription(resumeJson);
+		System.out.println(resumeDescription);
+	}
+	
+	static String getJson(String path)
+	{
+		try
+		{
+			byte[] resumeBytes = Files.readAllBytes(Paths.get(path));
+			return new String(resumeBytes, "UTF-8");
+		}
+		catch (Exception ex)
+		{
+			return null;
+		}
+	}
+	
+	static String getResumeDescription(String resumeJson)
+	{
+		Map jsonArgs = new HashMap();
+		jsonArgs.put(JsonReader.USE_MAPS, true);
+		Map obj = (Map)JsonReader.jsonToJava(resumeJson, jsonArgs);
+		Map profile = (Map) obj.get("profile");
+		String name = profile.get("name").toString();
+        Object[] educations = (Object[]) obj.get("education");
+        Map education = (Map) educations[0];
+        String major = education.get("major").toString();
+        String institution = education.get("institution").toString();
+		return (name.toString() + " studied " + major.toString() + " at " + institution.toString() + ".");
+	}
+}
+
+In addition to Maps, some other java collections are lists, which represent an ordered list
+of objects, sets, which represent a set of objects where each object can only exist once in
+a set, and Trees, which organize Maps and Sets. 
+
+Here's an example of a Tree Set. I add 3 job applicants to the set of finalists, 
+then I remove John Doe from the set: 
+
+import java.util.TreeSet;
+ 
+public class ApplicantFinalistsTreeSet {
+ 
+    public static void main(String a[]){
+        TreeSet<String> applicantset = new TreeSet<String>();
+        applicantset.add("Catherine Roebuck");
+        applicantset.add("John Doe");
+        applicantset.add("Ellen Degeneres");
+        System.out.println("Applicants: "+applicantset);
+        applicantset.remove("John Doe");
+        System.out.println("Elements: "+ applicantset);
+    }
+}
+
