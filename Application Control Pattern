@@ -1,8 +1,31 @@
-Application Control Pattern is a little bit like MVC; it's a way of organizing an application. 
+Application Control Pattern is a way of organizing an application. 
 
 Application Control Pattern centralizes control. This is great for modularity and reusability. 
 APC provides one place for handling requests with business logic and directing the flow of 
 traffic so the right view is delivered to the user. 
 
-For ACP, I would have a controller interface: 
+Here's my start to a program using Application Control Pattern. 
+
+Model: 
+
+public class fullNameModel {
+
+//this is where any logic is held. For this simple example, the logic is just going to concatenate first and last names into full name
+
+private String fullName;
+
+public void concatName(String firstName, String lastName) {
+  fullName = firstName + " " + lastName;
+}
+
+public String getFullName() {
+  return fullName;
+}
+}
+
+Then I will need a View where a user can input first and last names. 
+
+Then the Controller. The controller doesn't contain logic, just listeners that wait until an action is kicked off, then goes to the Model
+to carry out the logic. The controller decides which view to show to the user at any given time. The controller can catch exceptions
+and can alert the user of errors. 
 
