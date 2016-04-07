@@ -1,19 +1,34 @@
 HTTP Url Connections can connect to a webpage. 
 
 One reason I might use this would be if I wanted to pull in info
-that changes often. For instance, this link is for a mini weather station
-in my neighborhood: https://map.bloomsky.com/weather-stations/eaB1rJytnpS4q52r
+that changes often. For instance, I might want to pull the current 
+info from a wikipedia page: 
 
-Since the weather changes often, maybe I would want to connect to the webpage 
-and pull current weather from there.
-
-To open a connection: 
+Here's my start to using URL connections: 
 
 try {
-  URL url = new URL("https://map.bloomsky.com/weather-stations/eaB1rJytnpS4q52r");
-  URLConnection weatherInfo = url.openConnection();
-  weatherInfo.connect();
+  URL url = new URL("https://en.wikipedia.org/wiki/Hamilton_(musical)");
+  URLConnection hamiltonInfo = url.openConnection();
+  connection.setRequestMethod("GET");
+  hamiltonInfo.connect();
+  reader = new BufferedReader(newInputStreamReader(hamiltonInfo.getInputStream()00;
+  stringInfo = new StringBuilder();
+  String line = null;
+  while ((line = reader.readLine()) != null)
+  {
+    stringInfo.append(line + "\n");
+  }
+  return stringInfo.toString();
 }
-catch (IOException e {
-  System.out.println("connection failed");
+catch (Exception e {
+  System.out.println("something went wrong");
+  throw e;
 }
+finally
+{
+  reader.close();
+}
+
+
+
+
