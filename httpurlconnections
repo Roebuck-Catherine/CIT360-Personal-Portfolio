@@ -1,0 +1,19 @@
+HTTP Url Connections can connect to a webpage. 
+
+One reason I might use this would be if I wanted to pull in info
+that changes often. For instance, this link is for a mini weather station
+in my neighborhood: https://map.bloomsky.com/weather-stations/eaB1rJytnpS4q52r
+
+Since the weather changes often, maybe I would want to connect to the webpage 
+and pull current weather from there.
+
+To open a connection: 
+
+try {
+  URL url = new URL("https://map.bloomsky.com/weather-stations/eaB1rJytnpS4q52r");
+  URLConnection weatherInfo = url.openConnection();
+  weatherInfo.connect();
+}
+catch (IOException e {
+  System.out.println("connection failed");
+}
