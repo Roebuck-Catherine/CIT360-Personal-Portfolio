@@ -23,13 +23,13 @@ public class hello
          System.out.println("Hello, it's me " + server);
          Socket client = new Socket(server, port);
 		 + client.getRemoteSocketAddress());
-         OutputStream outToServer = client.getOutputStream();
-         DataOutputStream out = new DataOutputStream(outToServer);
+         OutputStream clientMessage = client.getOutputStream();
+         DataOutputStream out = new DataOutputStream(clientMessage);
          out.writeUTF("Hello from the other side"
                       + client.getLocalSocketAddress());
-         InputStream inFromServer = client.getInputStream();
+         InputStream servermessage = client.getInputStream();
          DataInputStream in =
-                        new DataInputStream(inFromServer);
+                        new DataInputStream(servermessage);
          System.out.println("Message from server: " + in.readUTF());
          client.close();
       }catch(IOException e)
@@ -39,5 +39,4 @@ public class hello
    }
 }
 
-Here's a server program: 
-
+The server would have a similar program. 
